@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const comparisonTableData = {
   headers: ["Feature", "Minimal Limited", "Competitors"],
@@ -13,9 +13,9 @@ const comparisonTableData = {
 
 export default function Comparison() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container max-w-5xl mx-auto overflow-x-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-dark">
+    <section className="bg-white py-20">
+      <div className="container mx-auto max-w-5xl overflow-x-auto">
+        <h2 className="mb-10 text-center text-3xl font-bold text-dark md:text-4xl">
           Why We Stand Out
         </h2>
         <table className="w-full border-collapse text-center">
@@ -24,7 +24,7 @@ export default function Comparison() {
               {comparisonTableData.headers.map((header) => (
                 <th
                   key={header}
-                  className="p-4 border border-gray-300 font-semibold"
+                  className="border border-gray-300 p-4 font-semibold"
                 >
                   {header}
                 </th>
@@ -34,9 +34,11 @@ export default function Comparison() {
           <tbody>
             {comparisonTableData.rows.map(([feature, minimal, competitor]) => (
               <tr key={feature} className="odd:bg-light even:bg-white">
-                <td className="p-4 border border-gray-300 font-medium text-dark">{feature}</td>
-                <td className="p-4 border border-gray-300">{minimal}</td>
-                <td className="p-4 border border-gray-300">{competitor}</td>
+                <td className="border border-gray-300 p-4 font-medium text-dark">
+                  {feature}
+                </td>
+                <td className="border border-gray-300 p-4">{minimal}</td>
+                <td className="border border-gray-300 p-4">{competitor}</td>
               </tr>
             ))}
           </tbody>

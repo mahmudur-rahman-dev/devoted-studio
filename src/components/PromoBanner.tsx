@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const promoBanner = {
   background:
@@ -12,23 +12,23 @@ const promoBanner = {
 export default function PromoBanner() {
   return (
     <section
-      className="py-20 flex items-center justify-center text-center text-white"
+      className="flex items-center justify-center py-20 text-center text-white"
       style={{
         background: promoBanner.background,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="bg-dark bg-opacity-50 p-10 rounded-lg max-w-3xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow">
+      <div className="max-w-3xl rounded-lg bg-dark bg-opacity-50 p-10">
+        <h2 className="mb-4 text-3xl font-bold drop-shadow md:text-4xl">
           {promoBanner.title}
         </h2>
-        <p className="text-lg md:text-xl mb-6 drop-shadow">
+        <p className="mb-6 text-lg drop-shadow md:text-xl">
           {promoBanner.subtitle}
         </p>
         <a
           href={promoBanner.ctaLink}
-          className="inline-block bg-gold text-dark font-semibold px-8 py-3 rounded hover:bg-secondary transition"
+          className="inline-block rounded bg-gold px-8 py-3 font-semibold text-dark transition hover:bg-secondary"
         >
           {promoBanner.ctaText}
         </a>

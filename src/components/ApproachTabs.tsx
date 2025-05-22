@@ -5,29 +5,25 @@ const steps = [
     title: "Meet and Greet",
     img: "https://ext.same-assets.com/2815741424/consultation.webp",
     percent: 10,
-    desc:
-      "You'll meet our expert designers, and they will listen to your requirements. (No payment is required.)",
+    desc: "You'll meet our expert designers, and they will listen to your requirements. (No payment is required.)",
   },
   {
     title: "Design Development",
     img: "https://ext.same-assets.com/2815741424/planning.webp",
     percent: 30,
-    desc:
-      "With a range of designs, our designers will seek your approval and develop the design from start to finish. (Pay 5% of the estimated quotation.)",
+    desc: "With a range of designs, our designers will seek your approval and develop the design from start to finish. (Pay 5% of the estimated quotation.)",
   },
   {
     title: "Place Your Order",
     img: "https://ext.same-assets.com/2815741424/order.webp",
     percent: 60,
-    desc:
-      "Once the order is placed, we will begin working on construction drawings and start procuring materials.",
+    desc: "Once the order is placed, we will begin working on construction drawings and start procuring materials.",
   },
   {
     title: "Installation Process",
     img: "https://ext.same-assets.com/2815741424/installation.webp",
     percent: 90,
-    desc:
-      "To ensure everything is on track, we'll provide you with a Gantt Chart and conduct 154 quality checks.",
+    desc: "To ensure everything is on track, we'll provide you with a Gantt Chart and conduct 154 quality checks.",
   },
   {
     title: "You Moving In",
@@ -43,18 +39,18 @@ export default function ApproachTabs() {
 
   return (
     <div className="w-full">
-      <div className="flex flex-wrap justify-between border-b border-primary mb-6 text-center text-sm md:text-base font-semibold text-text">
+      <div className="mb-6 flex flex-wrap justify-between border-b border-primary text-center text-sm font-semibold text-text md:text-base">
         {steps.map((s, i) => (
           <button
             key={s.title}
             onClick={() => setIndex(i)}
-            className={`px-2 pb-4 flex-1 relative transition-colors ${
+            className={`relative flex-1 px-2 pb-4 transition-colors ${
               i === index ? "text-primary" : "hover:text-primary"
             }`}
           >
             {s.title}
             {i === index && (
-              <span className="absolute left-0 right-0 -bottom-[1px] h-[3px] bg-primary rounded-t" />
+              <span className="absolute -bottom-[1px] left-0 right-0 h-[3px] rounded-t bg-primary" />
             )}
           </button>
         ))}
@@ -63,21 +59,21 @@ export default function ApproachTabs() {
         <img
           src={step.img}
           alt={step.title}
-          className="max-w-full h-64 object-cover rounded-lg shadow-md"
+          className="h-64 max-w-full rounded-lg object-cover shadow-md"
         />
         <div className="w-full max-w-4xl">
-          <div className="flex justify-between text-xs font-medium text-text-light mb-1">
+          <div className="mb-1 flex justify-between text-xs font-medium text-text-light">
             <span>0%</span>
             <span>{step.percent}%</span>
           </div>
-          <div className="w-full h-3 rounded-full bg-gray-200 overflow-hidden">
+          <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200">
             <div
               className="h-full bg-primary transition-all duration-500"
               style={{ width: `${step.percent}%` }}
             />
           </div>
         </div>
-        <p className="max-w-3xl text-center text-text font-medium">
+        <p className="max-w-3xl text-center font-medium text-text">
           {step.desc}
         </p>
       </div>

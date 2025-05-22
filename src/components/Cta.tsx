@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 export default function Cta() {
   return (
-    <section className="py-24 bg-gold text-dark text-center">
-      <div className="container max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <section className="bg-gold py-24 text-center text-dark">
+      <div className="container mx-auto max-w-3xl">
+        <h2 className="mb-6 text-4xl font-bold md:text-5xl">
           Ready to Start Your Project?
         </h2>
-        <p className="mb-10 text-lg max-w-xl mx-auto">
+        <p className="mx-auto mb-10 max-w-xl text-lg">
           Contact us today and let's bring your vision to life with Minimal
           Limited.
         </p>
         <a
           href="#contact"
-          className="inline-block bg-dark text-gold font-semibold px-10 py-4 rounded hover:bg-dark/90 transition"
+          className="inline-block rounded bg-dark px-10 py-4 font-semibold text-gold transition hover:bg-dark/90"
         >
           Book a Meeting
         </a>

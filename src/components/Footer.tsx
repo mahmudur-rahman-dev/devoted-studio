@@ -3,27 +3,27 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-light pt-16 pb-8 text-sm">
-      <div className="max-w-6xl mx-auto px-4 grid gap-8 grid-cols-1 md:grid-cols-3">
+    <footer className="bg-dark pb-8 pt-16 text-sm text-light">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-3">
         {/* About */}
         <div>
           <img
             src="https://ext.same-assets.com/2815741424/247221757.png"
             alt="Minimal Logo"
-            className="h-10 mb-4"
+            className="mb-4 h-10"
           />
-          <p className="leading-relaxed mb-4 text-light/80">
+          <p className="mb-4 leading-relaxed text-light/80">
             Minimal is synonymous with sensible design thinking and authenticity
             in heritage and culture. Our mission is to create a space that is
             both connected and fresh, achieving balance and harmony through
             meaningful simplicity.
           </p>
-          <div className="flex space-x-4 mt-2">
+          <div className="mt-2 flex space-x-4">
             <a
               href="https://www.facebook.com/MinimalLimited/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light/70 hover:text-gold transition"
+              className="text-light/70 transition hover:text-gold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ export default function Footer() {
               href="https://www.instagram.com/minimal.limited/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light/70 hover:text-gold transition"
+              className="text-light/70 transition hover:text-gold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/minimallimited/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light/70 hover:text-gold transition"
+              className="text-light/70 transition hover:text-gold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ export default function Footer() {
               href="https://www.youtube.com/channel/UCL7kw-kctBmVB5D7SW2qtmg"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light/70 hover:text-gold transition"
+              className="text-light/70 transition hover:text-gold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,20 +83,29 @@ export default function Footer() {
         </div>
         {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-gold">Our Services</h3>
+          <h3 className="mb-4 text-lg font-semibold text-gold">Our Services</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/#residential" className="text-light/70 hover:text-gold transition">
+              <Link
+                to="/#residential"
+                className="text-light/70 transition hover:text-gold"
+              >
                 Residential Interior
               </Link>
             </li>
             <li>
-              <Link to="/#commercial" className="text-light/70 hover:text-gold transition">
+              <Link
+                to="/#commercial"
+                className="text-light/70 transition hover:text-gold"
+              >
                 Commercial Interior
               </Link>
             </li>
             <li>
-              <Link to="/#architectural" className="text-light/70 hover:text-gold transition">
+              <Link
+                to="/#architectural"
+                className="text-light/70 transition hover:text-gold"
+              >
                 Architectural Consultancy
               </Link>
             </li>
@@ -105,50 +114,70 @@ export default function Footer() {
         {/* Resources & Contact */}
         <div className="grid grid-cols-2 gap-6">
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gold">Resources</h3>
+            <h3 className="mb-4 text-lg font-semibold text-gold">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-light/70 hover:text-gold transition">
+                <Link
+                  to="/"
+                  className="text-light/70 transition hover:text-gold"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/how-we-work" className="text-light/70 hover:text-gold transition">
+                <Link
+                  to="/how-we-work"
+                  className="text-light/70 transition hover:text-gold"
+                >
                   How we work
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-light/70 hover:text-gold transition">
+                <Link
+                  to="/portfolio"
+                  className="text-light/70 transition hover:text-gold"
+                >
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-light/70 hover:text-gold transition">
+                <Link
+                  to="/about"
+                  className="text-light/70 transition hover:text-gold"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-light/70 hover:text-gold transition">
+                <Link
+                  to="/contact"
+                  className="text-light/70 transition hover:text-gold"
+                >
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gold">Contact</h3>
+            <h3 className="mb-4 text-lg font-semibold text-gold">Contact</h3>
             <p className="mb-2 text-light/70">
-              <a href="tel:+8801775760496" className="hover:text-gold transition">
+              <a
+                href="tel:+8801775760496"
+                className="transition hover:text-gold"
+              >
                 Phone: +8801775760496
               </a>
             </p>
-            <p className="mb-2 text-light/70">Email: sales@minimallimited.com</p>
+            <p className="mb-2 text-light/70">
+              Email: sales@minimallimited.com
+            </p>
             <p className="text-light/70">
               KA-6/A, 2nd Floor, Bashundhara R/A Main Road, Vatara, Dhaka-1229
             </p>
           </div>
         </div>
       </div>
-      <div className="border-t border-light/10 mt-12 pt-6 text-center text-light/50 text-xs">
+      <div className="mt-12 border-t border-light/10 pt-6 text-center text-xs text-light/50">
         © 2025 Minimal Limited
       </div>
     </footer>

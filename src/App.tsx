@@ -14,7 +14,7 @@ import CommercialInteriorPage from "./pages/commercial-interior";
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-background min-h-screen flex flex-col font-sans">
+      <div className="flex min-h-screen flex-col bg-background font-sans">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -24,8 +24,14 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/how-we-work" element={<HowWeWorkPage />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
-            <Route path="/residential-interior" element={<ResidentialInteriorPage />} />
-            <Route path="/commercial-interior" element={<CommercialInteriorPage />} />
+            <Route
+              path="/residential-interior"
+              element={<ResidentialInteriorPage />}
+            />
+            <Route
+              path="/commercial-interior"
+              element={<CommercialInteriorPage />}
+            />
           </Routes>
         </main>
         <Footer />

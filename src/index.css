@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -73,14 +73,19 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', 'Nunito', Arial, Helvetica, sans-serif;
+  font-family: "Poppins", "Nunito", Arial, Helvetica, sans-serif;
   background: var(--ml-primary-bg);
   color: var(--ml-dark);
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   color: var(--ml-dark);
 }
 
@@ -105,10 +110,10 @@ section {
   border: none;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   transition: background 0.2s;
 }

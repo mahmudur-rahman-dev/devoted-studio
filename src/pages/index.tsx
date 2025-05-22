@@ -20,8 +20,10 @@ const Home = () => {
       <WhyChooseUs />
       <PromoBanner />
       <div className="py-20" id="approach">
-        <div className="container max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-dark">Our Approach</h2>
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="mb-12 text-3xl font-bold text-dark md:text-4xl">
+            Our Approach
+          </h2>
           <ApproachTabs />
         </div>
       </div>

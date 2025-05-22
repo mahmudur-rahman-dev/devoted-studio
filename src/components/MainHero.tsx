@@ -1,23 +1,23 @@
-import React from 'react';
+import React from "react";
 
 export default function MainHero() {
   return (
     <section
-      className="relative min-h-[600px] flex items-center justify-center"
+      className="relative flex min-h-[600px] items-center justify-center"
       style={{
         background:
           "linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://oceandrive.com/get/files/image/galleries/modern-kitchen-ideas-design-hero.jpg) center/cover no-repeat",
       }}
     >
-      <div className="container z-10 py-24 flex flex-col items-center text-center">
-        <h1 className="text-white text-5xl md:text-6xl font-normal tracking-wider">
+      <div className="container z-10 flex flex-col items-center py-24 text-center">
+        <h1 className="text-5xl font-normal tracking-wider text-white md:text-6xl">
           Life is a Celebration
         </h1>
-        <p className="text-white text-xl md:text-2xl font-light mt-4 mb-10">
+        <p className="mb-10 mt-4 text-xl font-light text-white md:text-2xl">
           The start is just a click away.
         </p>
         <a
-          className="bg-gold hover:bg-secondary text-dark px-8 py-3 rounded-md font-medium transition-colors flex items-center"
+          className="flex items-center rounded-md bg-gold px-8 py-3 font-medium text-dark transition-colors hover:bg-secondary"
           href="#contact"
         >
           Book A Meeting

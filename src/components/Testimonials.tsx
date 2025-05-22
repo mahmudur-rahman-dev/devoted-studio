@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const testimonials = [
   {
@@ -26,20 +26,22 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-light">
-      <div className="container max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-dark">Testimonials</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <section className="bg-light py-20">
+      <div className="container mx-auto max-w-5xl text-center">
+        <h2 className="mb-12 text-3xl font-bold text-dark md:text-4xl">
+          Testimonials
+        </h2>
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {testimonials.map(({ quote, name, role, avatar }) => (
             <div
               key={name}
-              className="bg-white rounded-xl shadow p-10 flex flex-col items-center"
+              className="flex flex-col items-center rounded-xl bg-white p-10 shadow"
             >
-              <p className="italic text-text-light mb-6">"{quote}"</p>
+              <p className="mb-6 italic text-text-light">"{quote}"</p>
               <img
                 src={avatar}
                 alt={`${name} avatar`}
-                className="h-16 w-16 rounded-full mb-4 object-cover"
+                className="mb-4 h-16 w-16 rounded-full object-cover"
               />
               <div className="font-semibold text-dark">{name}</div>
               <div className="text-sm text-text-light">{role}</div>

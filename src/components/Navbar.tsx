@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 // Nav links
 const navLinks = [
@@ -46,8 +46,8 @@ export default function Navbar() {
 
   // Determine active link based on current path
   const getIsActive = (path: string): boolean => {
-    if (path === '/') {
-      return location.pathname === '/';
+    if (path === "/") {
+      return location.pathname === "/";
     }
     return location.pathname.startsWith(path);
   };
@@ -66,8 +66,8 @@ export default function Navbar() {
   }, [navOpen]);
 
   return (
-    <header className="bg-light border-b border-secondary/20 sticky top-0 z-40 shadow-sm">
-      <div className="container flex items-center justify-between py-4 relative">
+    <header className="sticky top-0 z-40 border-b border-secondary/20 bg-light shadow-sm">
+      <div className="container relative flex items-center justify-between py-4">
         <Link to="/" className="flex items-center">
           <svg
             width="32"
@@ -98,16 +98,16 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => {
             const isActive = getIsActive(link.to);
 
             // Special case for the links with hash
-            const isHashLink = link.to.includes('#');
+            const isHashLink = link.to.includes("#");
 
             if (isHashLink) {
               return (
-                <div key={link.label} className="relative group">
+                <div key={link.label} className="group relative">
                   <a
                     href={link.to}
                     className={`relative py-2 text-base font-medium transition-colors ${
@@ -128,19 +128,19 @@ export default function Navbar() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="inline-block ml-1 w-4 h-4"
+                        className="ml-1 inline-block h-4 w-4"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                     )}
                   </a>
                   {link.hasDropdown && link.dropdownItems && (
-                    <div className="absolute left-0 mt-1 w-56 bg-white shadow-lg rounded-md overflow-hidden z-50 transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 origin-top-left invisible group-hover:visible">
+                    <div className="invisible absolute left-0 z-50 mt-1 w-56 origin-top-left scale-95 transform overflow-hidden rounded-md bg-white opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100">
                       {link.dropdownItems.map((item) => (
                         <Link
                           key={item.label}
                           to={item.to}
-                          className="block py-2 px-4 text-text hover:bg-background hover:text-primary transition-colors"
+                          className="block px-4 py-2 text-text transition-colors hover:bg-background hover:text-primary"
                         >
                           {item.label}
                         </Link>
@@ -173,7 +173,7 @@ export default function Navbar() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="inline-block ml-1 w-4 h-4"
+                    className="ml-1 inline-block h-4 w-4"
                   >
                     <path d="m6 9 6 6 6-6" />
                   </svg>
@@ -185,7 +185,7 @@ export default function Navbar() {
 
         {/* Mobile nav toggle */}
         <button
-          className="md:hidden flex items-center justify-center h-10 w-10 rounded hover:bg-background transition"
+          className="flex h-10 w-10 items-center justify-center rounded transition hover:bg-background md:hidden"
           aria-label="Open navigation"
           onClick={() => setNavOpen((v) => !v)}
         >
@@ -216,31 +216,31 @@ export default function Navbar() {
         <div
           className={`fixed inset-0 z-40 bg-dark/40 transition-opacity duration-200 ${
             navOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? "pointer-events-auto opacity-100"
+              : "pointer-events-none opacity-0"
           }`}
           aria-hidden={!navOpen}
           onClick={() => setNavOpen(false)}
         >
           <nav
-            className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg flex flex-col gap-2 pt-16 px-6 transition-transform duration-200 ${
+            className={`absolute right-0 top-0 flex h-full w-64 flex-col gap-2 bg-white px-6 pt-16 shadow-lg transition-transform duration-200 ${
               navOpen ? "translate-x-0" : "translate-x-full"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
             {navLinks.map((link) => {
               const isActive = getIsActive(link.to);
-              const isHashLink = link.to.includes('#');
+              const isHashLink = link.to.includes("#");
 
               if (isHashLink) {
                 return (
                   <div key={link.label} className="flex flex-col">
                     <a
                       href={link.to}
-                      className={`py-3 px-2 rounded text-lg font-semibold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
+                      className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide transition-colors ${
                         isActive
-                          ? "border-primary text-primary bg-light"
-                          : "border-transparent hover:border-primary hover:text-primary text-text"
+                          ? "border-primary bg-light text-primary"
+                          : "border-transparent text-text hover:border-primary hover:text-primary"
                       }`}
                       style={{ letterSpacing: "0.04em" }}
                       onClick={(e) => {
@@ -254,12 +254,12 @@ export default function Navbar() {
                       {link.label}
                     </a>
                     {link.hasDropdown && link.dropdownItems && (
-                      <div className="pl-4 mt-2 space-y-2">
+                      <div className="mt-2 space-y-2 pl-4">
                         {link.dropdownItems.map((item) => (
                           <Link
                             key={item.label}
                             to={item.to}
-                            className="block py-2 text-text hover:text-primary transition-colors"
+                            className="block py-2 text-text transition-colors hover:text-primary"
                             onClick={() => setNavOpen(false)}
                           >
                             {item.label}
@@ -275,10 +275,10 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   to={link.to}
-                  className={`py-3 px-2 rounded text-lg font-semibold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
+                  className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide transition-colors ${
                     isActive
-                      ? "border-primary text-primary bg-light"
-                      : "border-transparent hover:border-primary hover:text-primary text-text"
+                      ? "border-primary bg-light text-primary"
+                      : "border-transparent text-text hover:border-primary hover:text-primary"
                   }`}
                   style={{ letterSpacing: "0.04em" }}
                   onClick={() => setNavOpen(false)}

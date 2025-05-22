@@ -21,16 +21,16 @@ const points = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why" className="py-16 bg-background text-center">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-dark">
+    <section id="why" className="bg-background py-16 text-center">
+      <div className="mx-auto max-w-6xl px-4">
+        <h2 className="mb-12 text-3xl font-bold text-dark md:text-4xl">
           Why Choose us
         </h2>
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {points.map((p) => (
             <div key={p.title} className="flex flex-col items-center">
-              <img src={p.icon} alt="icon" className="h-20 w-20 mb-4" />
-              <h3 className="font-semibold text-lg text-dark leading-snug">
+              <img src={p.icon} alt="icon" className="mb-4 h-20 w-20" />
+              <h3 className="text-lg font-semibold leading-snug text-dark">
                 {p.title}
               </h3>
             </div>
@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
         </div>
         <a
           href="#contact"
-          className="inline-block mt-12 px-8 py-3 bg-primary text-white font-medium rounded hover:bg-primary-light transition"
+          className="mt-12 inline-block rounded bg-primary px-8 py-3 font-medium text-white transition hover:bg-primary-light"
         >
           Book a Consultation
         </a>

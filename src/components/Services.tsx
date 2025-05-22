@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const services = [
   {
@@ -20,26 +20,30 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="bg-background py-20">
       <div className="container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 text-dark">Services</h2>
-        <p className="text-text-light max-w-xl mx-auto mb-12">
+        <h2 className="mb-3 text-3xl font-bold text-dark md:text-4xl">
+          Services
+        </h2>
+        <p className="mx-auto mb-12 max-w-xl text-text-light">
           Whether it's your home, office, or an entire complex, we'll deliver
           from consultation to installation.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {services.map((srv) => (
             <div
               key={srv.title}
-              className="bg-light rounded-xl shadow p-8 flex flex-col items-center transition hover:shadow-lg"
+              className="flex flex-col items-center rounded-xl bg-light p-8 shadow transition hover:shadow-lg"
             >
               <img
                 src={srv.icon}
                 alt={`${srv.title} Icon`}
-                className="h-14 w-14 mb-5"
+                className="mb-5 h-14 w-14"
               />
-              <h3 className="text-xl font-semibold mb-2 text-dark">{srv.title}</h3>
-              <p className="text-text-light text-base">{srv.desc}</p>
+              <h3 className="mb-2 text-xl font-semibold text-dark">
+                {srv.title}
+              </h3>
+              <p className="text-base text-text-light">{srv.desc}</p>
             </div>
           ))}
         </div>
