@@ -4,13 +4,19 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Inter', 'Poppins', 'Nunito', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'heading': ['Poppins', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'body': ['Inter', 'Nunito', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'display': ['Playfair Display', 'Georgia', 'serif'],
+        'mono': ['Fira Code', 'Monaco', 'Consolas', 'monospace'],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
-        // New color palette
         primary: {
           DEFAULT: '#6b2737',
           light: '#85424f',
@@ -31,8 +37,6 @@ module.exports = {
         light: '#f9f6f3',
         dark: '#3a2a2a',
         gold: '#d4c19c',
-
-        // Original Tailwind theme colors - preserved
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

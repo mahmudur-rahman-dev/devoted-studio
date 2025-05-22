@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Nunito:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,13 +9,7 @@ html {
 }
 
 :root {
-  --ml-primary-bg: #f9f9f8;
-  --ml-maroon: #926361;
-  --ml-dark: #393f46;
-  --ml-gold: #e3cb9a;
-  --ml-grey: #cacecf;
-  --ml-muted-txt: #999e9e;
-
+  /* Keep only Tailwind system variables */
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;
   --card: 0 0% 100%;
@@ -73,9 +67,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", "Nunito", Arial, Helvetica, sans-serif;
-  background: var(--ml-primary-bg);
-  color: var(--ml-dark);
+  @apply font-sans bg-background text-dark;
   box-sizing: border-box;
 }
 
@@ -85,19 +77,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  color: var(--ml-dark);
+  @apply font-heading text-dark;
 }
 
 a {
-  color: var(--ml-maroon);
+  @apply text-primary font-medium transition-colors duration-200;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--ml-gold);
+  @apply text-gold;
 }
 
 section {
@@ -105,21 +94,11 @@ section {
 }
 
 .btn {
-  background: var(--ml-gold);
-  color: var(--ml-dark);
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  transition: background 0.2s;
+  @apply bg-gold text-dark border-none py-3 px-8 rounded-lg font-sans text-base font-semibold shadow-sm cursor-pointer transition-colors duration-200;
 }
+
 .btn:hover {
-  background: var(--ml-maroon);
-  color: #fff;
+  @apply bg-primary text-white;
 }
 
 .container {
