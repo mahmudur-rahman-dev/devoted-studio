@@ -36,6 +36,9 @@ const steps = [
 export default function ApproachTabs() {
   const [index, setIndex] = useState(0);
   const step = steps[index];
+  
+  // Create style object for progress bar
+  const progressStyle = { width: `${step.percent}%` };
 
   return (
     <div className="w-full">
@@ -69,7 +72,7 @@ export default function ApproachTabs() {
           <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200">
             <div
               className="h-full bg-primary transition-all duration-500"
-              style={{ width: `${step.percent}%` }}
+              style={progressStyle}
             />
           </div>
         </div>

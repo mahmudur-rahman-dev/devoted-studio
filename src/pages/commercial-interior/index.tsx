@@ -7,10 +7,7 @@ export default function CommercialInteriorPage() {
       {/* Hero Section */}
       <section className="relative h-[500px] bg-background">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(https://www.minimallimited.com/wp-content/uploads/minimal-interior-design.png)`,
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-[url(https://www.minimallimited.com/wp-content/uploads/minimal-interior-design.png)]"
         ></div>
         <div className="absolute inset-0 bg-dark/50"></div>
         <div className="container relative z-10 flex h-full flex-col justify-center">

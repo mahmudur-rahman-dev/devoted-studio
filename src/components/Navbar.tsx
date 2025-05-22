@@ -240,12 +240,11 @@ export default function Navbar() {
                   <div key={link.label} className="flex flex-col">
                     <a
                       href={link.to}
-                      className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide transition-colors ${
+                      className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide tracking-wider transition-colors ${
                         isActive
                           ? "border-primary bg-light text-primary"
                           : "border-transparent text-text hover:border-primary hover:text-primary"
                       }`}
-                      style={{ letterSpacing: "0.04em" }}
                       onClick={(e) => {
                         if (link.hasDropdown) {
                           e.preventDefault(); // Prevent navigation if has dropdown
@@ -278,12 +277,11 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   to={link.to}
-                  className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide transition-colors ${
+                  className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide tracking-wider transition-colors ${
                     isActive
                       ? "border-primary bg-light text-primary"
                       : "border-transparent text-text hover:border-primary hover:text-primary"
                   }`}
-                  style={{ letterSpacing: "0.04em" }}
                   onClick={() => setNavOpen(false)}
                 >
                   {link.label}

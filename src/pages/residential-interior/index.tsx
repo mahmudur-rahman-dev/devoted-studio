@@ -37,6 +37,10 @@ export default function ResidentialInteriorPage() {
     },
   ];
 
+  // Create style objects for dynamic values
+  const progressBarStyle = { width: `${steps[activeTab].progress}%` };
+  const progressDotStyle = { left: `${steps[activeTab].progress}%` };
+
   const projects = [
     {
       title: "5375sft Duplex | Rangpur",
@@ -86,10 +90,7 @@ export default function ResidentialInteriorPage() {
       {/* Hero Section */}
       <section className="relative h-[500px] bg-background md:h-[600px]">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(https://ext.same-assets.com/3020618206/2052222645.webp)`,
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-[url(https://ext.same-assets.com/3020618206/2052222645.webp)]"
         ></div>
         <div className="absolute inset-0 bg-dark/40"></div>
         <div className="container relative z-10 flex h-full flex-col justify-center">
@@ -187,12 +188,12 @@ export default function ResidentialInteriorPage() {
                 <div className="h-2 rounded-full bg-gray-200">
                   <div
                     className="h-full rounded-full bg-primary transition-all duration-500"
-                    style={{ width: `${steps[activeTab].progress}%` }}
+                    style={progressBarStyle}
                   ></div>
                 </div>
                 <div
                   className="absolute -top-1 h-4 w-4 -translate-x-1/2 transform rounded-full bg-primary transition-all duration-500"
-                  style={{ left: `${steps[activeTab].progress}%` }}
+                  style={progressDotStyle}
                 ></div>
                 <div className="mt-1 flex justify-between">
                   <div className="text-sm font-medium text-text">0%</div>
