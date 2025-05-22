@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function MainHero() {
   return (
@@ -12,7 +13,7 @@ export default function MainHero() {
         <p className="mb-10 mt-4 text-xl font-light text-white md:text-2xl">
           The start is just a click away.
         </p>
-        <a
+        <Link
           className="flex items-center rounded-md bg-gold px-8 py-3 font-medium text-dark transition-colors hover:bg-secondary"
           href="#contact"
         >
@@ -32,7 +33,7 @@ export default function MainHero() {
             <path d="M5 12h14" />
             <path d="m12 5 7 7-7 7" />
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   );

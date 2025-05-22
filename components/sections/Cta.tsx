@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Cta() {
   return (
@@ -11,12 +12,12 @@ export default function Cta() {
           Contact us today and let's bring your vision to life with Minimal
           Limited.
         </p>
-        <a
+        <Link
           href="#contact"
           className="inline-block rounded bg-dark px-10 py-4 font-semibold text-gold transition hover:bg-dark/90"
         >
           Book a Meeting
-        </a>
+        </Link>
       </div>
     </section>
   );

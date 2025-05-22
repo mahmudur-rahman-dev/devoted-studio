@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -251,12 +252,12 @@ const About = () => {
           <h2 className="mb-8 text-3xl font-bold text-dark md:text-4xl">
             Make Your Dreams Come True With Just One Click
           </h2>
-          <a
+          <Link
             href="/contact"
             className="inline-block bg-gold px-8 py-3 font-medium text-dark transition-all hover:bg-opacity-90"
           >
             Book a Meeting
-          </a>
+          </Link>
         </div>
       </section>
     </div>

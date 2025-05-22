@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Projects() {
   const projects = [
@@ -62,12 +63,12 @@ export default function Projects() {
         </div>
 
         <div className="mt-12 text-center">
-          <a
+          <Link
             href="#contact"
             className="inline-block rounded bg-primary px-8 py-3 font-medium text-white transition hover:bg-primary-light"
           >
             View All Projects
-          </a>
+          </Link>
         </div>
       </div>
     </section>

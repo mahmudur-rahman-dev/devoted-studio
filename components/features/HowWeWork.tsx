@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 // Step type for work process
 interface Step {
@@ -149,12 +150,12 @@ const HowWeWork = () => {
               <br />
               Design to Installation Journey
             </h1>
-            <a
+            <Link
               href="/contact"
               className="mt-4 inline-block bg-gold px-8 py-3 font-medium text-dark transition-all hover:bg-opacity-90"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
         </div>
       </section>
