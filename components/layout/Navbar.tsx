@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // Nav links
 const navLinks = [
@@ -42,14 +43,14 @@ const navLinks = [
 
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   // Determine active link based on current path
   const getIsActive = (path: string): boolean => {
     if (path === "/") {
-      return location.pathname === "/";
+      return pathname === "/";
     }
-    return location.pathname.startsWith(path);
+    return pathname.startsWith(path);
   };
 
   // Prevent background scroll when nav is open
@@ -68,7 +69,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-secondary/20 bg-light shadow-sm">
       <div className="container relative flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <svg
             width="32"
             height="32"
@@ -111,7 +112,7 @@ export default function Navbar() {
             if (isHashLink) {
               return (
                 <div key={link.label} className="group relative">
-                  <a
+                  <Link
                     href={link.to}
                     className={`relative py-2 text-base font-medium transition-colors ${
                       isActive
@@ -136,13 +137,13 @@ export default function Navbar() {
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                     )}
-                  </a>
+                  </Link>
                   {link.hasDropdown && link.dropdownItems && (
                     <div className="invisible absolute left-0 z-50 mt-1 w-56 origin-top-left scale-95 transform overflow-hidden rounded-md bg-white opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100">
                       {link.dropdownItems.map((item) => (
                         <Link
                           key={item.label}
-                          to={item.to}
+                          href={item.to}
                           className="block px-4 py-2 text-text transition-colors hover:bg-background hover:text-primary"
                         >
                           {item.label}
@@ -157,7 +158,7 @@ export default function Navbar() {
             return (
               <Link
                 key={link.label}
-                to={link.to}
+                href={link.to}
                 className={`relative py-2 text-base font-medium transition-colors ${
                   isActive
                     ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-primary"
@@ -238,7 +239,7 @@ export default function Navbar() {
               if (isHashLink) {
                 return (
                   <div key={link.label} className="flex flex-col">
-                    <a
+                    <Link
                       href={link.to}
                       className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide tracking-wider transition-colors ${
                         isActive
@@ -254,13 +255,13 @@ export default function Navbar() {
                       }}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                     {link.hasDropdown && link.dropdownItems && (
                       <div className="mt-2 space-y-2 pl-4">
                         {link.dropdownItems.map((item) => (
                           <Link
                             key={item.label}
-                            to={item.to}
+                            href={item.to}
                             className="block py-2 text-text transition-colors hover:text-primary"
                             onClick={() => setNavOpen(false)}
                           >
@@ -276,7 +277,7 @@ export default function Navbar() {
               return (
                 <Link
                   key={link.label}
-                  to={link.to}
+                  href={link.to}
                   className={`rounded border-b-2 px-2 py-3 pb-1 text-lg font-semibold uppercase tracking-wide tracking-wider transition-colors ${
                     isActive
                       ? "border-primary bg-light text-primary"

@@ -1,5 +1,5 @@
 import React from "react";
-import HowWeWork from "@/src/components/HowWeWork";
+import HowWeWork from "@/components/features/HowWeWork";
 
 export const metadata = {
   title: 'How We Work - Minimal Limited Process',

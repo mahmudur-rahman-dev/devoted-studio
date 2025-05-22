@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectById, getRelatedProjects, projectsData } from "@/src/lib/projectData";
+import { getProjectById, getRelatedProjects, projectsData } from "@/lib/projectData";
 
 // Generate static params for all projects
 export async function generateStaticParams() {

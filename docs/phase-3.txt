@@ -1,0 +1,473 @@
+# Phase 3: Page Structure Migration - Smart Implementation Guide
+
+## PHASE 3: Convert Pages to App Router Structure
+
+### Step 3.1: Start Phase 3 Branch
+```bash
+git checkout -b nextjs-migration-phase3
+```
+
+### Step 3.2: Home Page Conversion
+**Source:** `src/pages/index.tsx`  
+**Target:** `app/page.tsx`
+
+**ACTION:** Copy and modify the existing home page
+
+```bash
+# Copy the existing home page component content
+cp src/pages/index.tsx app/page.tsx
+```
+
+**EDIT `app/page.tsx`:**
+
+**FIND this import section:**
+```tsx
+import React from "react";
+import MainHero from "../components/MainHero";
+import Projects from "../components/Projects";
+// ... other imports
+```
+
+**REPLACE with:**
+```tsx
+import React from "react";
+import MainHero from "@/src/components/MainHero";
+import Projects from "@/src/components/Projects";
+import Services from "@/src/components/Services";
+import WhyChooseUs from "@/src/components/WhyChooseUs";
+import ApproachTabs from "@/src/components/ApproachTabs";
+import Stats from "@/src/components/Stats";
+import Comparison from "@/src/components/Comparison";
+import Testimonials from "@/src/components/Testimonials";
+import PromoBanner from "@/src/components/PromoBanner";
+import Contact from "@/src/components/Contact";
+import Cta from "@/src/components/Cta";
+
+// Add metadata for SEO
+export const metadata = {
+  title: 'Minimal Limited - Interior Design & Architecture Services',
+  description: 'Professional interior design and architectural consultancy services in Bangladesh. Residential and commercial projects with quality materials and custom designs.',
+  keywords: 'interior design, architecture, Bangladesh, residential, commercial, minimal design, home interior',
+}
+```
+
+**KEEP the component function exactly the same** - no changes needed to the JSX content.
+
+### Step 3.3: About Page Conversion  
+**Source:** `src/pages/about.tsx`  
+**Target:** `app/about/page.tsx`
+
+```bash
+# Copy the about page
+cp src/pages/about.tsx app/about/page.tsx
+```
+
+**EDIT `app/about/page.tsx`:**
+
+**FIND:**
+```tsx
+import React from "react";
+import About from "../components/About";
+
+const AboutPage = () => {
+  return <About />;
+};
+
+export default AboutPage;
+```
+
+**REPLACE with:**
+```tsx
+import React from "react";
+import About from "@/src/components/About";
+
+export const metadata = {
+  title: 'About Us - Minimal Limited',
+  description: 'Learn about Minimal Limited\'s journey since 2016. Our team of architects, engineers, and designers creating exceptional interior spaces.',
+  keywords: 'about minimal limited, interior design company, Bangladesh design firm, company history',
+}
+
+const AboutPage = () => {
+  return <About />;
+};
+
+export default AboutPage;
+```
+
+### Step 3.4: Portfolio Page Conversion
+**Source:** `src/pages/portfolio.tsx`  
+**Target:** `app/portfolio/page.tsx`
+
+```bash
+# Copy the portfolio page
+cp src/pages/portfolio.tsx app/portfolio/page.tsx
+```
+
+**EDIT `app/portfolio/page.tsx`:**
+
+**FIND:**
+```tsx
+import React from "react";
+import Portfolio from "../components/Portfolio";
+
+const PortfolioPage = () => {
+  return <Portfolio />;
+};
+
+export default PortfolioPage;
+```
+
+**REPLACE with:**
+```tsx
+import React from "react";
+import Portfolio from "@/src/components/Portfolio";
+
+export const metadata = {
+  title: 'Portfolio - Minimal Limited Projects',
+  description: 'Explore our portfolio of residential and commercial interior design projects. See our completed works in Bangladesh.',
+  keywords: 'interior design portfolio, residential projects, commercial projects, minimal limited work',
+}
+
+const PortfolioPage = () => {
+  return <Portfolio />;
+};
+
+export default PortfolioPage;
+```
+
+### Step 3.5: Contact Page Conversion
+**Source:** `src/pages/contact.tsx`  
+**Target:** `app/contact/page.tsx`
+
+```bash
+# Copy the contact page
+cp src/pages/contact.tsx app/contact/page.tsx
+```
+
+**EDIT `app/contact/page.tsx`:**
+
+**FIND:**
+```tsx
+import React from "react";
+import Contact from "../components/Contact";
+
+const ContactPage = () => {
+  return <Contact />;
+};
+
+export default ContactPage;
+```
+
+**REPLACE with:**
+```tsx
+import React from "react";
+import Contact from "@/src/components/Contact";
+
+export const metadata = {
+  title: 'Contact Us - Minimal Limited',
+  description: 'Get in touch with Minimal Limited for your interior design needs. Located in Bashundhara R/A, Dhaka. Call: 01775 760 496',
+  keywords: 'contact minimal limited, interior design consultation, Dhaka interior designer, Bangladesh contact',
+}
+
+const ContactPage = () => {
+  return <Contact />;
+};
+
+export default ContactPage;
+```
+
+### Step 3.6: How We Work Page Conversion
+**Source:** `src/pages/how-we-work.tsx`  
+**Target:** `app/how-we-work/page.tsx`
+
+```bash
+# Copy the how we work page
+cp src/pages/how-we-work.tsx app/how-we-work/page.tsx
+```
+
+**EDIT `app/how-we-work/page.tsx`:**
+
+**FIND:**
+```tsx
+import React from "react";
+import HowWeWork from "../components/HowWeWork";
+
+const HowWeWorkPage = () => {
+  return <HowWeWork />;
+};
+
+export default HowWeWorkPage;
+```
+
+**REPLACE with:**
+```tsx
+import React from "react";
+import HowWeWork from "@/src/components/HowWeWork";
+
+export const metadata = {
+  title: 'How We Work - Minimal Limited Process',
+  description: 'Discover our 5-step interior design process from consultation to installation. Hassle-free design to installation journey.',
+  keywords: 'interior design process, how we work, design consultation, installation process, minimal limited approach',
+}
+
+const HowWeWorkPage = () => {
+  return <HowWeWork />;
+};
+
+export default HowWeWorkPage;
+```
+
+### Step 3.7: Residential Interior Page Conversion
+**Source:** `src/pages/residential-interior/index.tsx`  
+**Target:** `app/residential-interior/page.tsx`
+
+```bash
+# Copy the residential interior page
+cp src/pages/residential-interior/index.tsx app/residential-interior/page.tsx
+```
+
+**EDIT `app/residential-interior/page.tsx`:**
+
+**FIND the imports and replace `Link` from react-router-dom:**
+```tsx
+import { Link } from "react-router-dom";
+```
+
+**REPLACE with:**
+```tsx
+import Link from "next/link";
+```
+
+**ADD metadata at the top after imports:**
+```tsx
+export const metadata = {
+  title: 'Residential Interior Design - Minimal Limited',
+  description: 'Transform your home with our residential interior design services. Quality materials, custom designs, and professional installation.',
+  keywords: 'residential interior design, home interior, house design, minimal limited residential',
+}
+```
+
+**KEEP all the component logic the same** - just the import change is needed.
+
+### Step 3.8: Commercial Interior Page Conversion
+**Source:** `src/pages/commercial-interior/index.tsx`  
+**Target:** `app/commercial-interior/page.tsx`
+
+```bash
+# Copy the commercial interior page  
+cp src/pages/commercial-interior/index.tsx app/commercial-interior/page.tsx
+```
+
+**EDIT `app/commercial-interior/page.tsx`:**
+
+**FIND:**
+```tsx
+import { Link } from "react-router-dom";
+```
+
+**REPLACE with:**
+```tsx
+import Link from "next/link";
+```
+
+**ADD metadata:**
+```tsx
+export const metadata = {
+  title: 'Commercial Interior Design - Minimal Limited',
+  description: 'Professional commercial interior design services for offices, retail spaces, and institutions. Design and build solutions.',
+  keywords: 'commercial interior design, office interior, workplace design, commercial space design',
+}
+```
+
+### Step 3.9: Dynamic Project Page Conversion
+**Source:** `src/pages/project/[id].tsx`  
+**Target:** `app/project/[id]/page.tsx`
+
+```bash
+# Copy the project detail page
+cp src/pages/project/[id].tsx app/project/[id]/page.tsx
+```
+
+**EDIT `app/project/[id]/page.tsx`:**
+
+**FIND the imports:**
+```tsx
+import React, { useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { getProjectById, getRelatedProjects } from "../../lib/projectData";
+```
+
+**REPLACE with:**
+```tsx
+import React, { useState } from "react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getProjectById, getRelatedProjects, projectsData } from "@/src/lib/projectData";
+
+// Generate static params for all projects
+export async function generateStaticParams() {
+  return projectsData.map((project) => ({
+    id: project.id.toString(),
+  }))
+}
+
+// Generate metadata for each project
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const project = getProjectById(parseInt(params.id));
+  
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    }
+  }
+
+  return {
+    title: `${project.title} - Minimal Limited Project`,
+    description: project.description || `${project.title} project by Minimal Limited. ${project.size} in ${project.location}.`,
+    keywords: `${project.title}, ${project.category} project, ${project.location}, minimal limited portfolio`,
+  }
+}
+```
+
+**FIND the component function:**
+```tsx
+const ProjectDetail = () => {
+  const { id } = useParams<{ id: string }>();
+  const projectId = parseInt(id || "0", 10);
+```
+
+**REPLACE with:**
+```tsx
+interface ProjectDetailProps {
+  params: { id: string }
+}
+
+const ProjectDetail = ({ params }: ProjectDetailProps) => {
+  const projectId = parseInt(params.id, 10);
+```
+
+**FIND the not found logic:**
+```tsx
+if (!project) {
+  return (
+    <div className="container mx-auto px-4 py-20">
+      <h1 className="mb-8 text-2xl font-medium">Project not found</h1>
+      <Link to="/portfolio" className="text-primary hover:underline">
+        Back to Portfolio
+      </Link>
+    </div>
+  );
+}
+```
+
+**REPLACE with:**
+```tsx
+if (!project) {
+    notFound();
+}
+```
+
+### Step 3.10: Create Not Found Page for Project Route
+**Create new file:** `app/project/[id]/not-found.tsx`
+
+```tsx
+import Link from 'next/link'
+
+export default function NotFound() {
+  return (
+    <div className="container mx-auto px-4 py-20">
+      <h1 className="mb-8 text-2xl font-medium">Project not found</h1>
+      <p className="mb-4 text-text">Could not find the requested project.</p>
+      <Link 
+        href="/portfolio" 
+        className="text-primary hover:underline"
+      >
+        Back to Portfolio
+      </Link>
+    </div>
+  )
+}
+```
+
+### Step 3.11: Create Loading Page for Project Route
+**Create new file:** `app/project/[id]/loading.tsx`
+
+```tsx
+export default function Loading() {
+  return (
+    <div className="container mx-auto px-4 py-20">
+      <div className="animate-pulse">
+        <div className="mb-6 h-8 w-1/2 bg-gray-200 rounded"></div>
+        <div className="mb-4 h-4 w-3/4 bg-gray-200 rounded"></div>
+        <div className="h-64 bg-gray-200 rounded"></div>
+      </div>
+    </div>
+  )
+}
+```
+
+### Step 3.12: Validation Tests
+
+```bash
+# Start development server
+npm run dev
+
+# Test each page manually:
+# ✓ http://localhost:3000/ (home)
+# ✓ http://localhost:3000/about  
+# ✓ http://localhost:3000/portfolio
+# ✓ http://localhost:3000/contact
+# ✓ http://localhost:3000/how-we-work
+# ✓ http://localhost:3000/residential-interior
+# ✓ http://localhost:3000/commercial-interior
+# ✓ http://localhost:3000/project/1 (test with existing project ID)
+```
+
+### Step 3.13: Build Test
+```bash
+# Test static generation
+npm run build
+
+# Should show static generation for all routes
+# Should see "○ Static" for most pages
+# Should see "● SSG" for project pages with generateStaticParams
+```
+
+### Step 3.14: Phase 3 Commit
+```bash
+git add .
+git commit -m "Phase 3: Convert all pages to Next.js App Router structure"
+```
+
+---
+
+## SUCCESS CRITERIA FOR PHASE 3:
+
+### ✅ Phase 3 Success Indicators:
+- [ ] All 8 page routes accessible via browser
+- [ ] Each page displays correct content (same as before migration)
+- [ ] No "page not found" errors for existing routes
+- [ ] `npm run build` shows static generation working
+- [ ] Project detail pages work with valid IDs (like /project/1)
+- [ ] Not found page appears for invalid project IDs
+- [ ] All metadata exports are properly added
+
+### 🚨 Expected Issues (NORMAL):
+- **Navigation between pages won't work yet** (Links still use React Router - fixed in Phase 5)
+- **Some components may show import warnings** (fixed in Phase 4)
+- **Styling inconsistencies** (will be polished in Phase 7)
+- **Console warnings about Link usage** (fixed in Phase 5)
+
+### 🔴 Critical Errors (STOP IF THESE OCCUR):
+- Pages return 404 errors when accessed directly
+- Build fails due to generateStaticParams errors
+- Components completely fail to render
+- TypeScript compilation errors in page files
+
+### 📝 Smart Copy Strategy Used:
+- **Minimal code changes** - mostly just import path updates and metadata additions
+- **Preserved all existing logic** - no component behavior changes
+- **Reused existing component structure** - leveraged the good separation between page components and feature components
+- **Added Next.js specific features** gradually - metadata, generateStaticParams, proper error handling
+
+**If successful, you're ready for Phase 4 (Component Organization & Imports) - the most complex phase!**

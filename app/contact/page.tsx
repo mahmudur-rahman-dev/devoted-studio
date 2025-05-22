@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "@/src/components/Contact";
+import Contact from "@/components/sections/Contact";
 
 export const metadata = {
   title: 'Contact Us - Minimal Limited',

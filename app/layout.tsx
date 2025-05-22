@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
-import Navbar from '@/src/components/Navbar'
-import Footer from '@/src/components/Footer'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 import './globals.css'
 
 const inter = Inter({ 

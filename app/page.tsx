@@ -1,15 +1,15 @@
 import React from "react";
-import MainHero from "@/src/components/MainHero";
-import Projects from "@/src/components/Projects";
-import Services from "@/src/components/Services";
-import WhyChooseUs from "@/src/components/WhyChooseUs";
-import ApproachTabs from "@/src/components/ApproachTabs";
-import Stats from "@/src/components/Stats";
-import Comparison from "@/src/components/Comparison";
-import Testimonials from "@/src/components/Testimonials";
-import PromoBanner from "@/src/components/PromoBanner";
-import Contact from "@/src/components/Contact";
-import Cta from "@/src/components/Cta";
+import MainHero from "@/components/sections/MainHero";
+import Projects from "@/components/sections/Projects";
+import Services from "@/components/sections/Services";
+import WhyChooseUs from "@/components/features/WhyChooseUs";
+import ApproachTabs from "@/components/features/ApproachTabs";
+import Stats from "@/components/sections/Stats";
+import Comparison from "@/components/sections/Comparison";
+import Testimonials from "@/components/sections/Testimonials";
+import PromoBanner from "@/components/sections/PromoBanner";
+import Contact from "@/components/sections/Contact";
+import Cta from "@/components/sections/Cta";
 
 // Add metadata for SEO
 export const metadata = {

@@ -1,5 +1,5 @@
 import React from "react";
-import About from "@/src/components/About";
+import About from "@/components/sections/About";
 
 export const metadata = {
   title: 'About Us - Minimal Limited',

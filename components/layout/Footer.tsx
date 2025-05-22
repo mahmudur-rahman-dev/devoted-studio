@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -87,7 +87,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li>
               <Link
-                to="/#residential"
+                href="/#residential"
                 className="text-light/70 transition hover:text-gold"
               >
                 Residential Interior
@@ -95,7 +95,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                to="/#commercial"
+                href="/#commercial"
                 className="text-light/70 transition hover:text-gold"
               >
                 Commercial Interior
@@ -103,7 +103,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                to="/#architectural"
+                href="/#architectural"
                 className="text-light/70 transition hover:text-gold"
               >
                 Architectural Consultancy
@@ -118,7 +118,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/"
+                  href="/"
                   className="text-light/70 transition hover:text-gold"
                 >
                   Home
@@ -126,7 +126,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/how-we-work"
+                  href="/how-we-work"
                   className="text-light/70 transition hover:text-gold"
                 >
                   How we work
@@ -134,7 +134,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/portfolio"
+                  href="/portfolio"
                   className="text-light/70 transition hover:text-gold"
                 >
                   Portfolio
@@ -142,7 +142,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/about"
+                  href="/about"
                   className="text-light/70 transition hover:text-gold"
                 >
                   About
@@ -150,7 +150,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="text-light/70 transition hover:text-gold"
                 >
                   Contact

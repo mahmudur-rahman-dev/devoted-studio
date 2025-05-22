@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Category, projectsData } from "../lib/projectData";
+import Link from "next/link";
+import { Category, projectsData } from "@/lib/projectData";
 
 interface ProjectItem {
   id: number;
@@ -69,7 +69,7 @@ const Portfolio = () => {
           {filteredProjects.map((project) => (
             <div key={project.id} className="group transition-all duration-300">
               <Link
-                to={`/project/${project.id}`}
+                href={`/project/${project.id}`}
                 className="relative block overflow-hidden"
               >
                 <div className="aspect-h-2 aspect-w-3 relative bg-gray-100">
@@ -93,7 +93,7 @@ const Portfolio = () => {
         {/* Show All Button */}
         <div className="mt-12 flex justify-center">
           <Link
-            to="/portfolio"
+            href="/portfolio"
             className="bg-gold px-8 py-3 font-medium text-dark transition-all hover:bg-opacity-90"
           >
             Show All

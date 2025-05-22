@@ -1,5 +1,5 @@
 import React from "react";
-import Portfolio from "@/src/components/Portfolio";
+import Portfolio from "@/components/features/Portfolio";
 
 export const metadata = {
   title: 'Portfolio - Minimal Limited Projects',
