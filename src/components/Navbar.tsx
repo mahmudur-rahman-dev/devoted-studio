@@ -1,0 +1,295 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+// Nav links
+const navLinks = [
+  {
+    label: "Home",
+    to: "/",
+  },
+  {
+    label: "Services",
+    to: "/#services",
+    hasDropdown: true,
+    dropdownItems: [
+      {
+        label: "Residential Interior",
+        to: "/residential-interior",
+      },
+      {
+        label: "Commercial Interior",
+        to: "/commercial-interior",
+      },
+    ],
+  },
+  {
+    label: "Portfolio",
+    to: "/portfolio",
+  },
+  {
+    label: "How we work",
+    to: "/how-we-work",
+  },
+  {
+    label: "About",
+    to: "/about",
+  },
+  {
+    label: "Contact",
+    to: "/contact",
+  },
+];
+
+export default function Navbar() {
+  const [navOpen, setNavOpen] = useState(false);
+  const location = useLocation();
+
+  // Determine active link based on current path
+  const getIsActive = (path: string): boolean => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
+  // Prevent background scroll when nav is open
+  useEffect(() => {
+    if (navOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [navOpen]);
+
+  return (
+    <header className="bg-light border-b border-secondary/20 sticky top-0 z-40 shadow-sm">
+      <div className="container flex items-center justify-between py-4 relative">
+        <Link to="/" className="flex items-center">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="mr-2"
+          >
+            <path
+              d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
+              stroke="#6b2737"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M16 22C19.3137 22 22 19.3137 22 16C22 12.6863 19.3137 10 16 10C12.6863 10 10 12.6863 10 16C10 19.3137 12.6863 22 16 22Z"
+              stroke="#6b2737"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M16 16L20 12"
+              stroke="#6b2737"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+          <span className="text-xl font-normal text-dark">minimal</span>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = getIsActive(link.to);
+
+            // Special case for the links with hash
+            const isHashLink = link.to.includes('#');
+
+            if (isHashLink) {
+              return (
+                <div key={link.label} className="relative group">
+                  <a
+                    href={link.to}
+                    className={`relative py-2 text-base font-medium transition-colors ${
+                      isActive
+                        ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-primary"
+                        : "text-text hover:text-primary"
+                    }`}
+                  >
+                    {link.label}
+                    {link.hasDropdown && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="inline-block ml-1 w-4 h-4"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    )}
+                  </a>
+                  {link.hasDropdown && link.dropdownItems && (
+                    <div className="absolute left-0 mt-1 w-56 bg-white shadow-lg rounded-md overflow-hidden z-50 transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 origin-top-left invisible group-hover:visible">
+                      {link.dropdownItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          to={item.to}
+                          className="block py-2 px-4 text-text hover:bg-background hover:text-primary transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={link.label}
+                to={link.to}
+                className={`relative py-2 text-base font-medium transition-colors ${
+                  isActive
+                    ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-primary"
+                    : "text-text hover:text-primary"
+                }`}
+              >
+                {link.label}
+                {link.hasDropdown && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="inline-block ml-1 w-4 h-4"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Mobile nav toggle */}
+        <button
+          className="md:hidden flex items-center justify-center h-10 w-10 rounded hover:bg-background transition"
+          aria-label="Open navigation"
+          onClick={() => setNavOpen((v) => !v)}
+        >
+          <svg
+            className="h-7 w-7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            {navOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 8h16M4 16h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        {/* Mobile nav menu */}
+        <div
+          className={`fixed inset-0 z-40 bg-dark/40 transition-opacity duration-200 ${
+            navOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }`}
+          aria-hidden={!navOpen}
+          onClick={() => setNavOpen(false)}
+        >
+          <nav
+            className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg flex flex-col gap-2 pt-16 px-6 transition-transform duration-200 ${
+              navOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {navLinks.map((link) => {
+              const isActive = getIsActive(link.to);
+              const isHashLink = link.to.includes('#');
+
+              if (isHashLink) {
+                return (
+                  <div key={link.label} className="flex flex-col">
+                    <a
+                      href={link.to}
+                      className={`py-3 px-2 rounded text-lg font-semibold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
+                        isActive
+                          ? "border-primary text-primary bg-light"
+                          : "border-transparent hover:border-primary hover:text-primary text-text"
+                      }`}
+                      style={{ letterSpacing: "0.04em" }}
+                      onClick={(e) => {
+                        if (link.hasDropdown) {
+                          e.preventDefault(); // Prevent navigation if has dropdown
+                        } else {
+                          setNavOpen(false);
+                        }
+                      }}
+                    >
+                      {link.label}
+                    </a>
+                    {link.hasDropdown && link.dropdownItems && (
+                      <div className="pl-4 mt-2 space-y-2">
+                        {link.dropdownItems.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.to}
+                            className="block py-2 text-text hover:text-primary transition-colors"
+                            onClick={() => setNavOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className={`py-3 px-2 rounded text-lg font-semibold uppercase tracking-wide transition-colors pb-1 border-b-2 ${
+                    isActive
+                      ? "border-primary text-primary bg-light"
+                      : "border-transparent hover:border-primary hover:text-primary text-text"
+                  }`}
+                  style={{ letterSpacing: "0.04em" }}
+                  onClick={() => setNavOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+}
