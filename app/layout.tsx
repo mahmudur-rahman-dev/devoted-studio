@@ -16,9 +16,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Minimal Limited - Interior Design & Architecture',
+  title: 'Devoted Studio - Interior Design & Architecture',
   description: 'Professional interior design and architectural consultancy services in Bangladesh. Residential and commercial projects with quality materials and custom designs.',
-  keywords: 'interior design, architecture, Bangladesh, residential, commercial, minimal design',
+  keywords: 'interior design, architecture, Bangladesh, residential, commercial, devoted design',
 }
 
 export default function RootLayout({

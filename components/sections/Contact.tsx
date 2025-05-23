@@ -35,7 +35,7 @@ const Contact = () => {
                 href="tel:+8801775760496"
                 className="text-text transition-colors hover:text-primary"
               >
-                01775 760 496
+                01xxx xxx xxx
               </a>
             </div>
 
@@ -57,10 +57,10 @@ const Contact = () => {
                 </svg>
               </div>
               <a
-                href="mailto:sales@minimallimited.com"
+                href="mailto:sales@devotedstudio.com"
                 className="text-text transition-colors hover:text-primary"
               >
-                sales@minimallimited.com
+                sales@devotedstudio.com
               </a>
             </div>
 
@@ -87,14 +87,14 @@ const Contact = () => {
                 </svg>
               </div>
               <p className="text-text">
-                KA-6/A, 2nd Floor, Bashundhara R/A Main Road, Vatara, Dhaka-1229
+                Dhanmondi, Dhaka-1229
               </p>
             </div>
 
             {/* Google Maps Embed */}
             <div className="h-64 w-full overflow-hidden rounded-md bg-gray-200">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.149335363936!2d90.42888507501867!3d23.81388677862201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c65e78f46ee1%3A0x3e009fd37c89657!2sMinimal%20Limited!5e0!3m2!1sen!2sbd!4v1709844557871!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.90544636007!2d90.36584227619323!3d23.750750978670208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4e27d3d0eb%3A0xa1bf0ba0f9bbcb5d!2sSonkor%20Bus%20Stop!5e0!3m2!1sen!2sbd!4v1747982024816!5m2!1sen!2sbd"
                 width="100%"
                 height="100%"
                 className="border-0"

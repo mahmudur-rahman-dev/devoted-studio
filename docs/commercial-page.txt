@@ -590,7 +590,7 @@ export default function CommercialInteriorPage() {
 
             <div className="rounded-lg bg-white p-8 shadow-lg">
               <p className="mb-6 text-xl italic text-text">
-                We chose Minimal because of their Professionalism, Time
+                We chose Devoted Studio because of their Professionalism, Time
                 commitment & Design sense.
               </p>
               <div className="font-semibold">

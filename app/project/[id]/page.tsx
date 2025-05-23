@@ -21,9 +21,9 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   }
 
   return {
-    title: `${project.title} - Minimal Limited Project`,
-    description: project.description || `${project.title} project by Minimal Limited. ${project.size} in ${project.location}.`,
-    keywords: `${project.title}, ${project.category} project, ${project.location}, minimal limited portfolio`,
+    title: `${project.title} - Devoted Studio Project`,
+    description: project.description || `${project.title} project by Devoted Studio. ${project.size} in ${project.location}.`,
+    keywords: `${project.title}, ${project.category} project, ${project.location}, devoted studio portfolio`,
   }
 }
 

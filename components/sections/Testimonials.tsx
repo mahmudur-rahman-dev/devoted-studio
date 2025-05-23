@@ -4,23 +4,23 @@ import Image from "next/image";
 const testimonials = [
   {
     quote:
-      "Minimal Limited transformed our office space beyond expectations. Highly recommend!",
-    name: "Sarah J.",
+      "Devoted Studio transformed our office space beyond expectations. Highly recommend!",
+    name: "Sarah Jakir",
     role: "Marketing Manager",
     avatar: "https://ext.same-assets.com/2815741424/avatar1.jpg",
   },
   {
     quote:
       "Professional, timely, and creative. Our new home feels perfect thanks to them.",
-    name: "Michael B.",
+    name: "Abeer R.",
     role: "Homeowner",
     avatar: "https://ext.same-assets.com/2815741424/avatar2.jpg",
   },
   {
     quote:
       "Their architectural consultancy helped us realize our dream project seamlessly.",
-    name: "Emily R.",
-    role: "Architect",
+    name: "Mahmudur Rahman",
+    role: "Engineer",
     avatar: "https://ext.same-assets.com/2815741424/avatar3.jpg",
   },
 ];

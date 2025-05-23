@@ -1,7 +1,7 @@
 import React from "react";
 
 const comparisonTableData = {
-  headers: ["Feature", "Minimal Limited", "Competitors"],
+  headers: ["Feature", "Devoted Studio", "Competitors"],
   rows: [
     ["Quality Materials", "✔️", "✔️"],
     ["Custom Designs", "✔️", "❌"],
@@ -32,12 +32,12 @@ export default function Comparison() {
             </tr>
           </thead>
           <tbody>
-            {comparisonTableData.rows.map(([feature, minimal, competitor]) => (
+            {comparisonTableData.rows.map(([feature, devoted, competitor]) => (
               <tr key={feature} className="odd:bg-light even:bg-white">
                 <td className="border border-gray-300 p-4 font-medium text-dark">
                   {feature}
                 </td>
-                <td className="border border-gray-300 p-4">{minimal}</td>
+                <td className="border border-gray-300 p-4">{devoted}</td>
                 <td className="border border-gray-300 p-4">{competitor}</td>
               </tr>
             ))}

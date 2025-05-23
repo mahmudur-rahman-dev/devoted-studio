@@ -8,19 +8,19 @@ export default function Footer() {
         {/* About */}
         <div>
           <img
-            src="https://ext.same-assets.com/2815741424/247221757.png"
-            alt="Minimal Logo"
+            src=""
+            alt="Devoted Logo"
             className="mb-4 h-10"
           />
           <p className="mb-4 leading-relaxed text-light/80">
-            Minimal is synonymous with sensible design thinking and authenticity
+            Devoted is synonymous with sensible design thinking and authenticity
             in heritage and culture. Our mission is to create a space that is
             both connected and fresh, achieving balance and harmony through
             meaningful simplicity.
           </p>
           <div className="mt-2 flex space-x-4">
             <a
-              href="https://www.facebook.com/MinimalLimited/"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="text-light/70 transition hover:text-gold"
@@ -35,7 +35,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/minimal.limited/"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="text-light/70 transition hover:text-gold"
@@ -50,7 +50,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/company/minimallimited/"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="text-light/70 transition hover:text-gold"
@@ -65,7 +65,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.youtube.com/channel/UCL7kw-kctBmVB5D7SW2qtmg"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="text-light/70 transition hover:text-gold"
@@ -165,20 +165,20 @@ export default function Footer() {
                 href="tel:+8801775760496"
                 className="transition hover:text-gold"
               >
-                Phone: +8801775760496
+                Phone: +8801XXXXXXXXX
               </a>
             </p>
             <p className="mb-2 text-light/70">
-              Email: sales@minimallimited.com
+              Email: sales@devotedstudio.com
             </p>
             <p className="text-light/70">
-              KA-6/A, 2nd Floor, Bashundhara R/A Main Road, Vatara, Dhaka-1229
+              Dhanmondi, Dhaka-1229
             </p>
           </div>
         </div>
       </div>
       <div className="mt-12 border-t border-light/10 pt-6 text-center text-xs text-light/50">
-        © 2025 Minimal Limited
+        © 2025 Devoted Studio
       </div>
     </footer>
   );

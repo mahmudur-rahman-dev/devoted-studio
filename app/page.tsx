@@ -13,9 +13,9 @@ import Cta from "@/components/sections/Cta";
 
 // Add metadata for SEO
 export const metadata = {
-  title: 'Minimal Limited - Interior Design & Architecture Services',
+  title: 'Devoted Studio - Interior Design & Architecture Services',
   description: 'Professional interior design and architectural consultancy services in Bangladesh. Residential and commercial projects with quality materials and custom designs.',
-  keywords: 'interior design, architecture, Bangladesh, residential, commercial, minimal design, home interior',
+  keywords: 'interior design, architecture, Bangladesh, residential, commercial, home interior',
 }
 
 const Home = () => {

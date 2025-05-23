@@ -13,18 +13,17 @@ const About = () => {
           </h2>
           <div className="mx-auto max-w-3xl">
             <p className="mb-6 text-center text-lg text-text">
-              It's 2016, when six young minds with different educational
-              backgrounds have come together to build a meaningful thing that
+              It's 2025, we came in the market to build a meaningful thing that
               inspires them, cherishes their dreams and creates solvency, by
               allowing creative gestures.
             </p>
             <p className="mb-6 text-center text-lg text-text">
-              7 years after the inception of Minimal Limited, we have a greater
+              1 years after the inception of Devoted Studio, we have a greater
               vision to become the foremost lifestyle brand, introducing a great
               way of living.
             </p>
             <p className="text-center text-lg text-text">
-              Minimal is uniquely identified with sensible design thinking and a
+              Devoted is uniquely identified with sensible design thinking and a
               connection to heritage and culture. Our goal is to make your space
               feel connected and alive, while maintaining balance and harmony,
               by having less but meaningful items.
@@ -53,7 +52,7 @@ const About = () => {
               </div>
               <div className="ml-8 rounded-lg bg-light p-6 shadow-sm md:ml-16">
                 <h3 className="mb-2 font-bold text-dark">
-                  Foundation Day of Minimalism
+                  Foundation Day of Devoted Studio
                 </h3>
                 <p className="text-text">
                   We started providing custom-made furniture along with space
@@ -88,8 +87,7 @@ const About = () => {
               </div>
               <div className="ml-8 rounded-lg bg-light p-6 shadow-sm md:ml-16">
                 <p className="mb-3 text-text">
-                  Minimal was relaunched, incorporating mechanical hardware and
-                  technology.
+                  incorporating mechanical hardware and technology.
                 </p>
                 <p className="text-text">
                   We achieved the status of a National finalist (Top 8) in the
@@ -228,7 +226,7 @@ const About = () => {
       <section className="bg-primary py-20">
         <div className="container mx-auto px-4">
           <h2 className="mb-6 text-center text-3xl font-bold text-white md:text-4xl">
-            The Team Behind Minimal
+            The Team Behind Devoted
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-white">
             Our diverse team of architects, engineers, and business managers is

@@ -9,8 +9,7 @@ export default function Cta() {
           Ready to Start Your Project?
         </h2>
         <p className="mx-auto mb-10 max-w-xl text-lg">
-          Contact us today and let's bring your vision to life with Minimal
-          Limited.
+          Contact us today and let's bring your vision to life with Devoted Studio.
         </p>
         <Link
           href="#contact"

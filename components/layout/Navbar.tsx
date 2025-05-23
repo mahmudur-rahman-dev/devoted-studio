@@ -99,7 +99,7 @@ export default function Navbar() {
               strokeLinecap="round"
             />
           </svg>
-          <span className="text-xl font-normal text-dark">minimal</span>
+          <span className="text-xl font-normal text-dark">Devoted Studio</span>
         </Link>
 
         {/* Desktop nav */}

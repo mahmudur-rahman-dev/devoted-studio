@@ -2,9 +2,9 @@ import React from "react";
 import About from "@/components/sections/About";
 
 export const metadata = {
-  title: 'About Us - Minimal Limited',
-  description: 'Learn about Minimal Limited\'s journey since 2016. Our team of architects, engineers, and designers creating exceptional interior spaces.',
-  keywords: 'about minimal limited, interior design company, Bangladesh design firm, company history',
+  title: 'About Us - Devoted Studio',
+  description: 'Learn about Devoted Studio\'s journey since 2025. Our team of architects, engineers, and designers creating exceptional interior spaces.',
+  keywords: 'about devoted studio, interior design company, Bangladesh design firm, company history',
 }
 
 const AboutPage = () => {
