@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ProjectDetails } from "@/lib/projectData";
 
 interface ProjectClientProps {
@@ -85,10 +86,13 @@ export default function ProjectClient({ project, relatedProjects }: ProjectClien
           {/* Project Image Gallery - Right Column */}
           <div className="relative md:col-span-9">
             <div className="aspect-h-9 aspect-w-16 relative mb-4 bg-gray-100">
-              <img
+              <Image
                 src={project.images[currentImageIndex]?.src || ""}
                 alt={project.images[currentImageIndex]?.alt || project.title}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                priority={currentImageIndex === 0}
+                sizes="(max-width: 768px) 100vw, 75vw"
               />
             </div>
 
@@ -132,10 +136,13 @@ export default function ProjectClient({ project, relatedProjects }: ProjectClien
                     className="relative block overflow-hidden"
                   >
                     <div className="aspect-h-2 aspect-w-3 relative bg-gray-100">
-                      <img
+                      <Image
                         src={otherProject.imageUrl}
                         alt={otherProject.title}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
                     <div className="mt-3">

@@ -1,12 +1,25 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function MainHero() {
   return (
-    <section
-      className="relative flex min-h-[600px] items-center justify-center bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://oceandrive.com/get/files/image/galleries/modern-kitchen-ideas-design-hero.jpg)] bg-center bg-cover bg-no-repeat"
-    >
-      <div className="container z-10 flex flex-col items-center py-24 text-center">
+    <section className="relative flex min-h-[600px] items-center justify-center">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://oceandrive.com/get/files/image/galleries/modern-kitchen-ideas-design-hero.jpg"
+          alt="Modern interior design"
+          fill
+          priority={true}
+          className="object-cover"
+          sizes="100vw"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
+
+      <div className="container relative z-10 flex flex-col items-center py-24 text-center">
         <h1 className="text-5xl font-normal tracking-wider text-white md:text-6xl">
           Life is a Celebration
         </h1>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -32,17 +33,21 @@ export default function Testimonials() {
           Testimonials
         </h2>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          {testimonials.map(({ quote, name, role, avatar }) => (
+          {testimonials.map(({ quote, name, role, avatar }, index) => (
             <div
               key={name}
               className="flex flex-col items-center rounded-xl bg-white p-10 shadow"
             >
               <p className="mb-6 italic text-text-light">"{quote}"</p>
-              <img
-                src={avatar}
-                alt={`${name} avatar`}
-                className="mb-4 h-16 w-16 rounded-full object-cover"
-              />
+              <div className="relative mb-4 h-16 w-16 overflow-hidden rounded-full">
+                <Image
+                  src={avatar}
+                  alt={`${name} avatar`}
+                  fill
+                  className="object-cover"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
               <div className="font-semibold text-dark">{name}</div>
               <div className="text-sm text-text-light">{role}</div>
             </div>

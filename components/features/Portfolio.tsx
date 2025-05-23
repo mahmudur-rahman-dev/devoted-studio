@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Category, projectsData } from "@/lib/projectData";
 
 interface ProjectItem {
@@ -67,17 +68,20 @@ const Portfolio = () => {
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <div key={project.id} className="group transition-all duration-300">
               <Link
                 href={`/project/${project.id}`}
                 className="relative block overflow-hidden"
               >
-                <div className="aspect-h-2 aspect-w-3 relative bg-gray-100">
-                  <img
+                <div className="relative aspect-[4/3] bg-gray-100">
+                  <Image
                     src={project.imageUrl}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading={index < 4 ? "eager" : "lazy"}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
                 <div className="mt-3 text-center">

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Projects() {
   const projects = [
@@ -34,10 +35,13 @@ export default function Projects() {
               className="overflow-hidden rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg"
             >
               <div className="relative h-64 overflow-hidden">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-110"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 flex items-end bg-gradient-to-t from-dark/70 to-transparent p-6 opacity-0 transition-opacity duration-300 hover:opacity-100">
                   <div>

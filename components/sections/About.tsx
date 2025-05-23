@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -239,8 +240,10 @@ const About = () => {
             {Array.from({ length: 18 }).map((_, index) => (
               <div
                 key={index}
-                className="aspect-h-1 aspect-w-1 bg-gray-200"
-              ></div>
+                className="relative aspect-square bg-gray-200"
+              >
+                <div className="absolute inset-0 bg-gray-300"></div>
+              </div>
             ))}
           </div>
         </div>

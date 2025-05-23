@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const services = [
   {
@@ -30,16 +31,20 @@ export default function Services() {
           from consultation to installation.
         </p>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-          {services.map((srv) => (
+          {services.map((srv, index) => (
             <div
               key={srv.title}
               className="flex flex-col items-center rounded-xl bg-light p-8 shadow transition hover:shadow-lg"
             >
-              <img
-                src={srv.icon}
-                alt={`${srv.title} Icon`}
-                className="mb-5 h-14 w-14"
-              />
+              <div className="relative mb-5 h-14 w-14">
+                <Image
+                  src={srv.icon}
+                  alt={`${srv.title} Icon`}
+                  fill
+                  className="object-contain"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
               <h3 className="mb-2 text-xl font-semibold text-dark">
                 {srv.title}
               </h3>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const points = [
   {
@@ -27,15 +28,24 @@ export default function WhyChooseUs() {
           Why Choose us
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {points.map((p) => (
+          {points.map((p, index) => (
             <div key={p.title} className="flex flex-col items-center">
-              <img src={p.icon} alt="icon" className="mb-4 h-20 w-20" />
+              <div className="relative mb-4 h-20 w-20">
+                <Image
+                  src={p.icon}
+                  alt="icon"
+                  fill
+                  className="object-contain"
+                  loading={index < 2 ? "eager" : "lazy"}
+                />
+              </div>
               <h3 className="text-lg font-semibold leading-snug text-dark">
                 {p.title}
               </h3>
             </div>
           ))}
         </div>
+        
         <a
           href="#contact"
           className="mt-12 inline-block rounded bg-primary px-8 py-3 font-medium text-white transition hover:bg-primary-light"
